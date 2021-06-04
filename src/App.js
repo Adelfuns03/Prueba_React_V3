@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
+import Bogota from './components/Bogota';
+import Inicio from './components/Inicio';
+import NewYork from './components/NewYork';
+import Cartagena from './components/Cartagena';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+     <div className="Container mt-5 ">
+       <div className="btn-group" >
+       <Link to="/" exact className="btn btn-dark">
+       Inicio
+       </Link>
+       <Link to="/bogota" className="btn btn-dark">
+       Bogotá D.C
+       </Link>
+       <Link to="/cartagena" className="btn btn-dark">
+       Cartagena
+       </Link>
+       <Link to="/newyork" className="btn btn-dark">
+       New York
+       </Link>
+       </div>
+       <hr />
+       <Switch>
+          <Route path="/bogota">
+            <Bogota />
+          </Route>
+          <Route path="/cartagena">
+            <Cartagena />
+          </Route>
+          <Route path="/newyork">
+           <NewYork/>
+          </Route>
+          <Route path="/" exact>
+            <Inicio />
+          </Route>
+       </Switch>
+     </div>
+    </Router>
   );
 }
 
 export default App;
+
+// hr genera una linea
+// switch se carga el contenido dinamico
+// path se declara la ruta 
+// <Route path="/" exact> se utiliza para dejar el inicio 
