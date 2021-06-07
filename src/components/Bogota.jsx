@@ -10,8 +10,8 @@ const Bogota = () => {
 
     const obtenernoticias = async () => {                              
         const data = await fetch('http://localhost:53535/api/bogota')  // Se transforman los datos en json
-        const newyork = await data.json()
-        setnoticias(newyork)
+        const bogota = await data.json()
+        setnoticias(bogota)
     }
 
     const [clima, setclima] = React.useState([])
@@ -22,8 +22,8 @@ const Bogota = () => {
 
     const obtenerclima = async () => {                              
         const data = await fetch('http://localhost:53535/api/bogota/getclima')  // Se transforman los datos en json
-        const newyorkclima = await data.json()
-        setclima(newyorkclima)
+        const bogotaclima = await data.json()
+        setclima(bogotaclima)
     }
 
     return ( 
