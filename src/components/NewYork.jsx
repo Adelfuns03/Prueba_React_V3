@@ -1,7 +1,24 @@
 import React from 'react'
 
+
 const NewYork = () => {
-    
+
+    React.useEffect(() => {
+
+    var url = 'http://localhost:53535/api/historial';
+    var data = {Ciudad: 'New York', Info: 'Noticias' };
+
+    fetch(url, {
+    method: 'POST', // or 'PUT'
+    body: JSON.stringify(data), // data can be `string` or {object}!
+    headers:{
+        'Content-Type': 'application/json'
+    }
+    }).then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', response));
+
+    }, [])
 
     const [noticias, setnoticias] = React.useState([])
 

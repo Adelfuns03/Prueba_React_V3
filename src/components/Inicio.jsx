@@ -1,8 +1,9 @@
-import React from 'react'
-import { Button } from "@material-ui/core";
+import React, {Fragment, useState} from 'react';
+import { Button} from "@material-ui/core";
 
 
 function Inicio() {
+     
 
     return ( 
         <div className='container-fluid' >
@@ -10,15 +11,16 @@ function Inicio() {
                 de resultados JSON.</h1>
 
         <p> 
-        <form className="Container mt-5" align='center'>
+        <div className="Container mt-5" align='center'>
 
-            <Button variant="contained" color="primary" href='http://localhost:53535/api/bogota' onClick={this.onhis}>
-                Noticias de Bogotá D.C</Button> {"   "}
+            <Button variant="contained" color="primary" href='http://localhost:53535/api/bogota'>
+                Noticias de Bogotá D.C
+                </Button> {"   "}
             <Button variant="contained" color="secondary" href='http://localhost:53535/api/cartagena' >
                 Noticias de Cartagena</Button> {"   "}
             <Button variant="contained" color="outlined" href='http://localhost:53535/api/newyork'>
                 Noticias de New York</Button> {"   "}
-        </form>
+        </div>
         </p>
  
         <div className="Container mt-5" align='center'>
@@ -29,11 +31,13 @@ function Inicio() {
             <Button variant="contained" color="outlined" href='http://localhost:53535/api/newyork/getclima'>
                 Clima de New York</Button> {"   "}
         </div>
+           
+           <div className="Container mt-5" align='left'> 
+               <Button variant="outline" color="primary" href='http://localhost:53535/api/historial'>
+                   Historial</Button>
+           </div>
 
-
-        </div>
-
-
+       </div>
      );
 }
 
