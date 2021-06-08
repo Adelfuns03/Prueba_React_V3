@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Button} from "@material-ui/core";
 
 const NewYork = () => {
 
@@ -9,8 +9,8 @@ const NewYork = () => {
     var data = {Ciudad: 'New York', Info: 'Noticias' };
 
     fetch(url, {
-    method: 'POST', // or 'PUT'
-    body: JSON.stringify(data), // data can be `string` or {object}!
+    method: 'POST', // o 'PUT'
+    body: JSON.stringify(data), // los datos pueden ser `string` o {object} 
     headers:{
         'Content-Type': 'application/json'
     }
@@ -63,7 +63,14 @@ const NewYork = () => {
                      ))
                 }
             </ul>
-
+        <hr />
+            <h1 className='container-fluid'> Información en formato JSON </h1>
+            <div className="Container mt-5" align='center'>
+            <Button variant="contained" color="primary" href='http://localhost:53535/api/cartagena/getclima'>
+                Clima de New York</Button> {"   "}
+            <Button variant="contained" color="secondary" href='http://localhost:53535/api/cartagena'>
+                Noticias de New York</Button> {"   "}
+            </div>
         </div>
      )
 }

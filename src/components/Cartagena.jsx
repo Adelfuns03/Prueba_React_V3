@@ -1,4 +1,5 @@
 import React from 'react'
+import {Button} from "@material-ui/core";
 
 const Cartagena = () => {
 
@@ -8,8 +9,8 @@ const Cartagena = () => {
         var data = {Ciudad: 'Cartagena', Info: 'Noticias' };
     
         fetch(url, {
-        method: 'POST', // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
+        method: 'POST', // o 'PUT'
+        body: JSON.stringify(data), // los datos pueden ser `string` o {object} 
         headers:{
             'Content-Type': 'application/json'
         }
@@ -63,7 +64,14 @@ const Cartagena = () => {
                      ))
                 }
             </ul>
-
+        <hr />
+            <h1 className='container-fluid'> Información en formato JSON </h1>
+            <div className="Container mt-5" align='center'>
+            <Button variant="contained" color="primary" href='http://localhost:53535/api/cartagena/getclima'>
+                Clima de Cartagena</Button> {"   "}
+            <Button variant="contained" color="secondary" href='http://localhost:53535/api/cartagena'>
+                Noticias de Cartagena</Button> {"   "}
+            </div>
         </div>
      );
 }
